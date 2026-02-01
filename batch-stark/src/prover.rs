@@ -462,10 +462,10 @@ where
         .map(|_| &opened_values[SC::Pcs::PREPROCESSED_TRACE_IDX]);
 
     let is_lookup = permutation_commit_and_data.is_some();
-    let permutation_values_for_mats = if is_lookup {
+    let permutation_values_for_mats: &[Vec<Vec<Challenge<SC>>>> = if is_lookup {
         &opened_values[permutation_idx]
     } else {
-        &vec![]
+        &[]
     };
     let mut permutation_values_for_mats = permutation_values_for_mats.iter();
 
